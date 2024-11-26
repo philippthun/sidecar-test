@@ -1,0 +1,12 @@
+---
+applications:
+- name: sidecar-test-cnb
+  memory: 256MB
+  disk_quota: 1024MB
+  lifecycle: cnb
+  buildpacks:
+    - docker://gcr.io/paketo-buildpacks/python
+  sidecars:
+  - name: sidecar
+    process_types: [web]
+    command: ./sidecar.sh

@@ -1,0 +1,10 @@
+---
+applications:
+- name: sidecar-test
+  memory: 256MB
+  disk_quota: 1024MB
+  buildpack: python_buildpack
+  sidecars:
+  - name: sidecar
+    process_types: [web]
+    command: ./sidecar.sh
